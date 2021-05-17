@@ -1,8 +1,6 @@
-$primary: #1e295b;
+$primary: #33323e;
 $secondary: #FFC392;
 $white: #e5f4e3;
-@import url('https://fonts.googleapis.com/css2?family=Girassol&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
 
 
 * {
@@ -48,8 +46,12 @@ body {
         h1 {
             font-weight: 900;
             color: $white;
-            font-size: 1.7rem;
+            font-size: 1.5rem;
             letter-spacing: .2rem;
+            cursor: default;
+            span {
+                color: $secondary;
+            }
         }
         .hamburger {
             font-size: 1.8rem;
@@ -79,7 +81,7 @@ body {
             width: 55vw;
             height: 100%;
             position: absolute;
-            background: #314080;
+            background: #4f4e5f;
             right: -55vw;
             box-shadow: -.1rem 0 1.5rem #000;
                 
@@ -106,8 +108,6 @@ body {
                     .active {
                         background: $secondary;
                         color: $primary;
-                        border-top-right-radius: .8rem;
-                        border-bottom-right-radius: .8rem;
                         box-shadow: 0 0 2rem rgba(#000, .5);
                     }
                 }
@@ -131,52 +131,64 @@ body {
         animation-fill-mode: forwards;
     }
 
-    .top-fixed-image-container {
+    .top-fixed-container {
         width: 100%;
         height: 20rem;
         position: fixed;
         left: 0;
         top: 4rem; //immediately after the header
         z-index: -1;
-
-        .top-picture {
-            display: block;
+        .picture-container {
             width: 100%;
             height: 100%;
-            object-fit: cover;
-        }
-    }
-
-    .greeting-section {
-        width: 100%;
-        height: 20rem;
-        background: radial-gradient(rgba($white, 0), $primary);
-        padding: 1.5rem;
-        padding-top: 8rem;
-
-        .introduction {
-            span {
+            .top-picture {
                 display: block;
-                margin-top: 1rem;
-                // font-family: 'Girassol', cursive;
-                letter-spacing: 3px;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
             }
-            .hi-there {
-                font-size: 1rem;
-                color: $secondary;
-            }
-            .i-am {
-                font-size: 1.5rem;
-                color: rgba($white, .8)
-            }
-            .name {
-                font-size: 1.5rem;
+            .bg-overlay {
+                width: 100%;
+                height: 100%;
+                background: radial-gradient(rgba($white, 0), rgba($primary, .8), $primary);
+                position: absolute;
+                top: 0;
+                left: 0;
             }
         }
+        .greeting-section {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            padding: 1.5rem;
+            padding-top: 8rem;
+            .introduction {
+                span {
+                    display: block;
+                    margin-top: 1rem;
+                    letter-spacing: 3px;
+                }
+                .hi-there {
+                    font-size: 1rem;
+                    color: $secondary;
+                }
+                .i-am {
+                    font-size: 1.5rem;
+                    color: rgba($white, .8)
+                }
+                .name {
+                    font-size: 1.5rem;
+                }
+            }
+        }
+        
     }
 
     .main-content {
-        background: $primary;              
+        background: $primary;
+        margin-top: 30rem;              
         .call-to-action {
             padding: 1rem;
             line-height: 1.5;
@@ -193,19 +205,27 @@ body {
                 .call-to-action-btn, .resume {
                     text-decoration: none;
                     color: $white;
-                    padding: .5rem 1.2rem;
+                    padding: .5rem 1rem;
                     font-weight: 500;
                     font-size: 1.2rem;
+                    border-radius: .2rem;
                 }
                 .call-to-action-btn {
                     background: $secondary;
+                    border: 1px solid $secondary;
                     color: $primary;
-                    margin-right: 1rem;
+                    margin-right: 2rem;
+                    &:hover {
+                        background: transparent;
+                        transition: all ease-in-out .3s;
+                        color: $secondary;
+                    }
                 }
                 .resume {
                     border: 1px solid $secondary;
                     color: $secondary;
                     transition: all ease-in-out .3s;
+                    font-size: .8rem;
                     &:hover {
                         background: $secondary;
                         color: $primary;
@@ -219,6 +239,11 @@ body {
             min-height: 25rem;
             margin: 10rem auto;
             padding: 1.5rem;
+            width: 100%;
+            &:last-of-type {
+                margin-bottom: 0;
+                padding-bottom: 10rem;
+            }
             .section-anchor {
                 display: block;
                 position: relative;
@@ -236,12 +261,12 @@ body {
             }
             .image-container {
                 width: 100%;
-                border: 2px solid rgba($white, .5);
-                box-shadow: 0 .5rem 1rem rgba(#000724, .7);
                 padding: .6rem;
                 margin-top: 5rem;
                 img {
                     width: 100%;
+                    height: 100%;
+                    object-fit: contain;
                 }
             }
         }
@@ -253,26 +278,28 @@ body {
                 padding: 2rem 1.5rem;
                 display: flex;
                 flex-direction: column;
-                // box-shadow: 0 0 1rem rgba(#000, .3);
                 border: 1px solid rgba($white, .7);
                 margin: 8rem auto;
-                // border-radius: .4rem;
 
-                .preview-image-contaner {
+                &:first-of-type {
+                    margin-top: 5rem;
+                }
+
+                .preview-image-container {
                     width: 100%;
                     border: 2px solid rgba($secondary, .8);
-                    // border-radius: .5rem;
                     margin-bottom: 3rem;
                     
                     img {
                         width: 100%;
+                        object-fit: contain;
                     }
                 }
                 .project-details {
+                    position: relative;
                     .project-name {
                         color: $white;
                         font-size: 1.8rem;
-                        // text-shadow: 3px 3px 7px rgba($secondary, .8);
                         font-family: 900;
                     }
                     .stacks {
@@ -310,8 +337,10 @@ body {
                         line-height: 1.5;
                     }
                     .link-group {
-                        display: flex;
-                        justify-content: flex-end;
+                        position: absolute;
+                        bottom: 0;
+                        right: 0;
+                        
 
                         a {
                             color: rgba($white, .7);
@@ -327,9 +356,12 @@ body {
                             span {
                                 vertical-align: middle;
                                 font-size: .9rem;
-                                border-bottom: 1px solid #020b37;
+                                border-bottom: 1px solid rgba($white, .7);
                                 padding-bottom: -1px;
 
+                            }
+                            &:hover {
+                                color: rgba($white, 1);
                             }
                         }
                     }
@@ -342,14 +374,15 @@ body {
                 list-style: none;
                 width: 100%;
                 display: flex;
-                justify-content: space-between;
+                justify-content: flex-start;
                 margin-top: 3rem;
                 .contact-link-item {
                     padding: 1rem;
                     background: rgba($white, .2);
                     border-radius: 50%;
                     transition: all ease-in-out .3s;
-                    color: $white;      
+                    color: $white;
+                    margin-right: 1.5rem;     
                     &:hover {
                         background: rgba($white, 1);
                         color: $primary;
@@ -408,5 +441,266 @@ body {
     }
     100% {
         background: rgba(#000, .5);
+    }
+}
+
+
+@media only screen and (min-width: 678px) {
+
+    .App {
+        
+        header {
+            padding: 2rem;
+        }
+        .main-content {
+            padding: 5rem 5rem 0;
+            .call-to-action {
+
+                p {
+                    font-size: 1.5rem;
+                }
+
+                .btn-groups {
+                    margin-top: 4rem;
+                    .call-to-action-btn {
+                        margin-right: 3.5rem;
+                    }
+                }
+            }
+
+            .sections {
+                .section-text {
+                    font-size: 1.3rem;
+                }
+                .image-container {
+                    height: 20rem;
+                }
+            }
+
+            .projects-section {
+                p {
+                    font-size: 1.2rem;
+
+                }
+
+                .project .project-details .description {
+                    font-size: 1.2rem;
+                }
+            } 
+            
+        }
+
+        .greeting-section {
+            padding: 4rem;
+            padding-top: 8rem;
+        }
+
+    }
+    
+
+
+
+    .big-screen-nav {
+        max-width: 85%;
+        ul{
+            list-style: none;
+            display: flex;
+            .link-items {
+                margin: 0 .2rem;
+                .nav-links {
+                    text-decoration: none;
+                    color: $white;
+                    font-weight: 500;
+                    transition: all ease-in-out .3s;
+                    padding: .5rem 1rem;
+                    &:hover {
+                        color: $secondary;
+                    }
+
+                }
+                .resume .download-icon {
+                    color: $secondary;
+                    vertical-align: bottom;
+                    font-size: 1.2rem;
+                }
+                .active {
+                    border: 1px solid $secondary;
+                    border-radius: .2rem;
+                    color: $secondary;
+                    box-shadow: 0 0 2rem rgba(#000, .5);
+                    
+                }
+            }
+        }
+    }
+}
+
+
+@media only screen and (min-width: 992px) {
+
+    .big-screen-nav ul .link-items {
+        margin: 0 .5rem;
+        .nav-links {
+            padding: .5rem 1.2rem;
+        }
+    }
+
+    .App {
+        
+        .top-fixed-container {
+            width: 100%;
+            height: 25rem;
+            position: fixed;
+            left: 0;
+            top: 4rem; //immediately after the header
+            z-index: 0;
+            position: absolute;
+            .picture-container {
+                width: 100%;
+                height: 100%;
+                .top-picture {
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+                .bg-overlay {
+                    width: 100%;
+                    height: 100%;
+                    background: radial-gradient(rgba($white, 0), rgba($primary, .8), $primary);
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                }
+            }
+            .content-container {
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-end;
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                padding: 2rem;
+                .greeting-section {
+                    position: static;
+                    height: 100%;
+                    padding-bottom: 0;
+                    margin-top: 7rem;
+                    .Typewriter__cursor {
+                        font-weight: 900;
+                        color: $secondary;
+                    }
+                    
+                }
+                .call-to-action {
+                    height: 100%;
+                    p {
+                        font-size: 1.5rem;
+                        font-weight: 500;
+                        line-height: 1.8;
+                        margin-top: 5rem;
+                        &::first-letter {
+                            font-size: 2rem;
+                            font-weight: 900;
+                        }
+                    }
+                    .btn-groups {
+                        margin-top: 2rem;
+                        display: flex;
+                        justify-content: flex-start;
+                        .call-to-action-btn, .resume {
+                            text-decoration: none;
+                            padding: .5rem 1rem;
+                            font-weight: 700;
+                            font-size: 1.3rem;
+                            
+                        }
+                        .call-to-action-btn {
+                            background: $secondary;
+                            border: 1px solid $secondary;
+                            color: $primary;
+                            margin-right: 1rem;
+                            transition:  all ease-in-out .5s;
+                            &:hover {
+                                background: transparent;
+                                color: $secondary;
+                            }
+                        }
+                        .resume {
+                            border: 1px solid $secondary;
+                            color: $secondary;
+                            transition: all ease-in-out .5s;
+                            font-size: 1rem;
+                            &:hover {
+                                background: $secondary;
+                                color: $primary;
+                            }
+                            .icon {
+                                font-size: 1.1rem;
+                                vertical-align: bottom;
+                            }
+                        }
+                    }
+                }
+            }
+            
+        }
+
+    
+            .main-content {
+                padding: 0 10vw;
+                .about-me-section {
+                    margin-top: 3rem;
+                    display: flex;
+                    justify-content: space-between;
+                    div {
+                        margin-right: 1rem;
+                        align-self: flex-end;
+                        width: 50%;
+                        .section-text {
+                            font-size: 1.2rem;
+                            margin-bottom: 0;
+                        }
+                    }
+                    .image-container {
+                        margin-left: 1rem;
+                        width: 50%;
+                    }
+                }
+    
+                .projects-section {
+                    .projects-gallery {
+                        .project {
+                            width: 100%;
+                            max-height: 27rem;
+                            padding: 2rem;
+                            flex-direction: row;
+                            box-shadow: 0 .5rem 1rem rgba(#000724, .7);
+                            .preview-image-container {
+                                width: 50%;
+                                margin-bottom: 0;
+                                margin-right: 1rem;
+                                align-self: flex-end;
+                            }
+    
+                            .project-details {
+                                width: 50%;
+                                margin-left: 1rem;
+                                .project-name {
+                                    font-size: 2rem;
+                                    font-weight: 900;
+                                    margin-bottom: 1rem;
+                                }
+                                .description {
+                                    font-size: 1rem;
+                                    line-height: 1.2;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
     }
 }

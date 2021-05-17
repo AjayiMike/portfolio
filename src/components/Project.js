@@ -2,8 +2,8 @@ import {AiFillGithub} from 'react-icons/ai';
 import {FiMonitor} from 'react-icons/fi'
 const Project = ({data: {name, image, stacks, description, live_link, repo_link}}) => {
     return(
-        <div className = "project">
-            <div className = "preview-image-contaner">
+        <div className = "project wow fadeInUp" data-wow-delay="1s">
+            <div className = "preview-image-container">
                 <img src = {image} alt = {`preview of ${name}`} />
             </div>
             <div className = "project-details">

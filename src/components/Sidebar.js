@@ -1,20 +1,8 @@
 import {RiFileDownloadLine} from 'react-icons/ri';
+import resume from '../assets/Adekunle Michael Ajayi resume.pdf';
 
-const Sideber = ({showHideSidebar}) => {
-
-    const linkClickHandler = (e) => {
-
-        if(e.target.id === "resume" || e.target.classList.contains("active")) return;
-
-        const allLinks = document.querySelectorAll(".nav-links");
-
-        allLinks.forEach(element => {
-            element.classList.remove("active")
-        });
-
-        e.target.classList.add("active")
-
-    }
+const Sideber = ({showHideSidebar, linkClickHandler}) => {
+    
   return (
     <nav className="sidebar" onClick = {showHideSidebar} >
         <div className = "navlinks-container">
@@ -33,7 +21,7 @@ const Sideber = ({showHideSidebar}) => {
                         <a href = "#contact-section" className = "nav-links" id = "contact" onClick = {(e) => {linkClickHandler(e); showHideSidebar(e) }}>Contact</a>
                     </li>
                     <li className = "link-items nav-items">
-                        <a href = "#docs" className = "nav-links resume" id = "resume" download onClick = {(e) => {linkClickHandler(e); showHideSidebar(e) }}>Resume <RiFileDownloadLine className = "download-icon" /></a>
+                        <a href = {resume} className = "nav-links resume" id = "resume" download onClick = {(e) => {linkClickHandler(e); showHideSidebar(e) }}>Resume <RiFileDownloadLine className = "download-icon" /></a>
                     </li>
                 </ul>
             </div>

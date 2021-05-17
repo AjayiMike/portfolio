@@ -170,7 +170,7 @@ function App() {
   return (
     <div className="App">
       <header>
-        <h1 className = "site-logo"><span>$</span>ADEK&gt;<span>_</span></h1>
+        <h1 className = "site-logo"><span>$</span>ADEK<span>&gt;</span><span><Typewriter options = {{cursor: "_"}}/></span></h1>
         {screenSize < 678 ? 
           <GiHamburgerMenu className = "hamburger" onClick = {showHideSidebar} /> : 
           <nav className = "big-screen-nav">
@@ -205,22 +205,23 @@ function App() {
               <span className = "bg-overlay"></span>
             </div>
             <div className = "greeting-section">
-              {/* <h1 className = "introduction">
-                <span className = "hi-there">Hi there,</span>
-                <span className = "i-am">I am</span>
-                <span className = "name">ADEKUNLE MICHAEL A.</span>
-              </h1> */}
-
               <Typewriter
                 onInit={(typewriter) => {
-                  typewriter.typeString("<h1 className = 'introduction' style = 'display:inline;'><span className = 'hi-there' style = 'letter-spacing: 3px; font-size: 1rem; color: #FFC392;'>Hi there!</span><br /> <span className = 'i-am' style = 'font-size: 1.5rem; letter-spacing: 3px; 1.8rem;color: rgba(#e5f4e3, .8)'>I am</span><br /> <span className = 'name' style = 'letter-spacing: 3px; font-size: 1.5rem'>ADEKUNLE MICHAEL A.</span> </h1>")
-                    .pauseFor(2500)
-                    .deleteAll()
-                    .start();
-                }}
+                typewriter
+                .pauseFor(2500)
+                .typeString("<h1 className = 'introduction' style = 'display:inline;'><span className = 'hi-there' style = 'letter-spacing: 3px; font-size: 1rem; color: #FFC392;'>Hi there!</span><br /> <span className = 'i-am' style = 'font-size: 1.5rem; letter-spacing: 3px; 1.8rem;color: rgba(#e5f4e3, .8)'>I am</span><br /> <span className = 'name' style = 'letter-spacing: 3px; font-size: 1.5rem'>ADEKUNLE MICHAEL A.</span> </h1>")
+                .pauseFor(5000)
+                .deleteChars(20)
+                .typeString("<h1 style = 'display:inline;'><span style = 'letter-spacing: 3px; font-size: 1.5rem'>A Web Developer</span><h1>")
+                .pauseFor(5000)
+                .deleteChars(15)
+                .typeString("<h1 style = 'display:inline;'><span style = 'letter-spacing: 3px; font-size: 1.5rem'>A Blockchain and DApp Enthusiast</span></h1>")
+                .pauseFor(5000)
+                .deleteAll()
+                .start();
+            }}
                 options = {{
                   loop: true,
-                  cursor: "_"
                 }}
               
               />
@@ -235,22 +236,23 @@ function App() {
           </div>
           <div className = "content-container">
             <div className = "greeting-section">
-              {/* <h1 className = "introduction">
-                <span className = "hi-there">Hi there,</span>
-                <span className = "i-am">I am</span>
-                <span className = "name">ADEKUNLE MICHAEL A.</span>
-              </h1> */}
-
               <Typewriter
                 onInit={(typewriter) => {
-                  typewriter.typeString("<h1 className = 'introduction' style = 'display:inline;'><span className = 'hi-there' style = 'letter-spacing: 3px; font-size: 1.2rem; color: #FFC392;'>Hi there!</span><br /> <span className = 'i-am' style = font-size: 'letter-spacing: 3px; 1.8rem;color: rgba(#e5f4e3, .8)'>I am</span><br /> <span className = 'name' style = 'letter-spacing: 3px; font-size: 2.2rem;'>ADEKUNLE MICHAEL A.</span> </h1>")
+                  typewriter
                     .pauseFor(2500)
+                    .typeString("<h1 className = 'introduction' style = 'display:inline;'><span className = 'hi-there' style = 'letter-spacing: 3px; font-size: 1rem; color: #FFC392;'>Hi there!</span><br /> <span className = 'i-am' style = 'font-size: 1.5rem; letter-spacing: 3px; 1.8rem;color: rgba(#e5f4e3, .8)'>I am</span><br /> <span className = 'name' style = 'letter-spacing: 3px; font-size: 1.5rem'>ADEKUNLE MICHAEL A.</span> </h1>")
+                    .pauseFor(5000)
+                    .deleteChars(20)
+                    .typeString("<h1 style = 'display:inline;'><span style = 'letter-spacing: 3px; font-size: 1.5rem'>A Web Developer</span><h1>")
+                    .pauseFor(5000)
+                    .deleteChars(15)
+                    .typeString("<h1 style = 'display:inline;'><span style = 'letter-spacing: 3px; font-size: 1.5rem'>A Blockchain and DApp Enthusiast</span></h1>")
+                    .pauseFor(5000)
                     .deleteAll()
                     .start();
-                }}
+                  }}
                 options = {{
                   loop: true,
-                  cursor: "_"
                 }}
               
               />

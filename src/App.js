@@ -273,7 +273,7 @@ function App() {
           {screenSize < 992 ? 
           
           <div className = "call-to-action wow fadeInUp" data-wow-delay="1s">
-              <p>I am a very skillful web developer, with knowldge and proficiency in building fast, scalable and responsive web applications as well as the ability of writing clean and maintainable code</p>
+              <p>I am a very skillful web developer, with knowledge and proficiency in building fast, scalable and responsive web applications as well as the ability of writing clean and maintainable code</p>
               <div className = "btn-groups">
                 <a href = "mailto:ajayimikeofficial@gmail.com" className = "call-to-action-btn">Hire me</a>
                 <a href = {resume} className = "resume" download> Download CV <RiFileDownloadLine/></a>

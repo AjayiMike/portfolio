@@ -44,7 +44,7 @@ function App() {
         name: "NerdyCruise",
         image: nerdycruise,
         stacks: ["React.js", "Node.js", "Express.js", "postgresql", "Heroku"],
-        description: "This is also a work in progress. It is web web Application intended for Nigerian secondary school students, most especially those preparing for their SSCE and UTME. On this platform, they will able to take test and get result immediately the test is completed. In addition, they will also be able to manage their profiles and participate in a forum discussion that is strictly meant for academic talks only",
+        description: "This is also a work in progress. It is web web Application intended for Nigerian secondary school students, most especially those preparing for their SSCE and UTME. On this platform, they will be able to take test and get result immediately the test is completed. In addition, they will also be able to manage their profiles and participate in a forum discussion that is strictly meant for academic talks only",
         live_link: "https://nerdycruise.herokuapp.com/",
         repo_link: "https://github.com/AjayiMike/Nerdycruise"
       },
@@ -287,7 +287,7 @@ function App() {
             <a href = "#about-me-section" id="about-me-section" className = "section-anchor">about me section</a>
             <h2 className = "section-title">About Me</h2>
             <p className = "section-text">
-              Hello! thanks for coming around. Adekunle Michael Ajayi is my name. I am a Web developer and currently studying Computer science at The Federal University of Technlogy Minna, Nigeria
+              Hello! thanks for coming around. Adekunle Michael Ajayi is my name. I am a Web developer and currently studying Computer science at The Federal University of Technlogy Minna, Nigeria.
             </p>
             <p className = "section-text">
               I recently picked interest in Web3 and i am elated to get an opportuninty to bridge my education with real world pratical experience that i can learn and grow from

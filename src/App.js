@@ -330,16 +330,16 @@ function App() {
           
           <ul className = "contact-links">
             <li className = "contact-link-item">
-              <a href = "mailto:ajayimikeofficial@gmail.com"><AiOutlineMail className = "icon" /></a>
+              <a href = "mailto:ajayimikeofficial@gmail.com" target="_blank" rel="noreferrer"><AiOutlineMail className = "icon" /></a>
             </li>
             <li className = "contact-link-item">
-              <a href = "https://github.com/AjayiMike"><AiFillGithub className = "icon" /></a>
+              <a href = "https://github.com/AjayiMike" target="_blank" rel="noreferrer"><AiFillGithub className = "icon" /></a>
             </li>
             <li className = "contact-link-item">
               <a href = "https://www.linkedin.com/in/adekunle-ajayi-a0b256208" target="_blank" rel="noreferrer"><AiFillLinkedin className = "icon" /></a>
             </li>
             <li className = "contact-link-item">
-              <a href = "tel:07089691306" targer = "_blank"><IoIosCall className = "icon" /></a>
+              <a href = "tel:07089691306"><IoIosCall className = "icon" /></a>
             </li>
           </ul>
           

@@ -15,8 +15,8 @@ const Project = ({data: {name, image, stacks, description, live_link, repo_link}
                 </ul>
                 <p className = "description">{description}</p>
                 <div className = "link-group">
-                    <a href = {repo_link} className = "link"><AiFillGithub className = "link-icon" /> <span>GitHub</span></a>
-                    <a href = {live_link} className = "link"> <FiMonitor className = "link-icon" /> <span>Demo</span></a>
+                    <a href = {repo_link} className = "link" target="_blank" rel="noreferrer"><AiFillGithub className = "link-icon" /> <span>GitHub</span></a>
+                    <a href = {live_link} className = "link" target="_blank" rel="noreferrer"> <FiMonitor className = "link-icon" /> <span>Demo</span></a>
                 </div>
             </div>
         </div>

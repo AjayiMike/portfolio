@@ -36,7 +36,7 @@ function App() {
         name: "BSC GAMES",
         image: bscg,
         stacks: ["React.js", "web3.js", "Solidity", "Netlify"],
-        description: "This is a Dapp. It is currently a work in progress. It is a blockchain based game where user places bet with a cryptocurrency (BNB) the user either win or lose, if a user wins, the winning amount is credited to the user's wallet, if otherwise, the amount used to place the bet is gone. However, in both cases, the user is payed certain amount of bscg (the native token of the platform) for placing a bet. check it out to see lots of other features",
+        description: "This is a Dapp. It is currently a work in progress. It is a blockchain based game where user places bet with a cryptocurrency (BNB) the user either win or lose, if a user wins, the winning amount is credited to the user's wallet, if otherwise, the amount used to place the bet is gone. However, in either case, the user is payed certain amount of bscg (the native token of the platform) for placing a bet. check it out to see lots of other features",
         live_link: "https://hardcore-meninsky-707284.netlify.app/",
         repo_link: "https://github.com/BSC-GAMES/ui"
       },
@@ -53,7 +53,7 @@ function App() {
         image: weatherApp,
         stacks: ["HTML5", "CSS3", "Javascript", "Open weather map API", "Firebase"],
         description: "A progressive web application that tells the weather condition of any city in the world with the help of OPEN WEATHER MAP API",
-        live_link: ": https://weather-pwa-aap.web.app/",
+        live_link: "https://weather-pwa-aap.web.app/",
         repo_link: "https://github.com/AjayiMike/mercy-s-weather-app"
       },
       {
@@ -258,7 +258,7 @@ function App() {
               />
             </div> 
             <div className = "call-to-action wow fadeInUp" data-wow-delay="1s">
-              <p>I am a very skillful web developer, with knowldge and proficiency in building fast, scalable and responsive web applications as well as the ability of writing clean and maintainable code</p>
+              <p>I am a very skillful web developer, with knowledge and proficiency in building fast, scalable and responsive web applications as well as the ability of writing clean and maintainable code</p>
               <div className = "btn-groups">
                 <a href = "mailto:ajayimikeofficial@gmail.com" className = "call-to-action-btn">Hire me</a>
                 <a href = {resume} className = "resume" download> Download CV <RiFileDownloadLine className = "icon"/></a>

@@ -2,7 +2,7 @@ import {AiFillGithub} from 'react-icons/ai';
 import {FiMonitor} from 'react-icons/fi'
 const Project = ({data: {name, image, stacks, description, live_link, repo_link}}) => {
     return(
-        <div className = "project wow fadeInUp" data-wow-delay="1s">
+        <div className = "project wow fadeInUp" data-wow-delay="0.5s">
             <div className = "preview-image-container">
                 <img src = {image} alt = {`preview of ${name}`} />
             </div>
@@ -16,7 +16,7 @@ const Project = ({data: {name, image, stacks, description, live_link, repo_link}
                 <p className = "description">{description}</p>
                 <div className = "link-group">
                     <a href = {repo_link} className = "link" target="_blank" rel="noreferrer"><AiFillGithub className = "link-icon" /> <span>GitHub</span></a>
-                    <a href = {live_link} className = "link" target="_blank" rel="noreferrer"> <FiMonitor className = "link-icon" /> <span>Demo</span></a>
+                    <a href = {live_link} className = "link" target="_blank" rel="noreferrer"><FiMonitor className = "link-icon" /> <span>Demo</span></a>
                 </div>
             </div>
         </div>

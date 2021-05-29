@@ -5,7 +5,8 @@ import {AiFillGithub, AiFillLinkedin, AiOutlineMail} from 'react-icons/ai';
 import {RiFileDownloadLine} from 'react-icons/ri';
 import {IoIosCall} from 'react-icons/io'
 import Sidebar from './components/Sidebar';
-import person from './assets/person.jpg';
+import person from './assets/Adek1.jpg';
+import person2 from './assets/Adek2.jpg';
 import developer from './assets/developer.svg';
 import bscg from './assets/bsc_games_screenshot.png';
 import nerdycruise from './assets/nerdycruise.png';
@@ -171,7 +172,7 @@ function App() {
     <div className="App">
       <header>
         <h1 className = "site-logo"><span>$</span>ADEK<span>&gt;</span><span><Typewriter options = {{cursor: "_"}}/></span></h1>
-        {screenSize < 678 ? 
+        {screenSize < 768 ? 
           <GiHamburgerMenu className = "hamburger" onClick = {showHideSidebar} /> : 
           <nav className = "big-screen-nav">
             <ul>
@@ -195,13 +196,13 @@ function App() {
         }
       </header>
 
-      {screenSize < 678 ? <Sidebar showHideSidebar = {showHideSidebar} linkClickHandler = {linkClickHandler} /> : null }
+      {screenSize < 768 ? <Sidebar showHideSidebar = {showHideSidebar} linkClickHandler = {linkClickHandler} /> : null }
       
       <div className = "top-fixed-container">
         {screenSize < 992 ? 
           <>
             <div className = "picture-container">
-              <img src = {person} className = "top-picture" alt = "adekunle michael ajayi" />
+              <img src = {screenSize > 768 ? person2 : person} className = "top-picture" alt = "Adekunle Michael Ajayi" />
               <span className = "bg-overlay"></span>
             </div>
             <div className = "greeting-section">
@@ -257,7 +258,7 @@ function App() {
               
               />
             </div> 
-            <div className = "call-to-action wow fadeInUp" data-wow-delay="1s">
+            <div className = "call-to-action wow fadeInUp">
               <p>I am a very skillful web developer, with knowledge and proficiency in building fast, scalable and responsive web applications as well as the ability of writing clean and maintainable code</p>
               <div className = "btn-groups">
                 <a href = "mailto:ajayimikeofficial@gmail.com" className = "call-to-action-btn">Hire me</a>
@@ -272,7 +273,7 @@ function App() {
       <main className = "main-content">
           {screenSize < 992 ? 
           
-          <div className = "call-to-action wow fadeInUp" data-wow-delay="1s">
+          <div className = "call-to-action wow fadeInUp">
               <p>I am a very skillful web developer, with knowledge and proficiency in building fast, scalable and responsive web applications as well as the ability of writing clean and maintainable code</p>
               <div className = "btn-groups">
                 <a href = "mailto:ajayimikeofficial@gmail.com" className = "call-to-action-btn">Hire me</a>
@@ -282,7 +283,7 @@ function App() {
           }
           
 
-        <div className = "sections about-me-section wow fadeInUp" data-wow-delay="2s">
+        <div className = "sections about-me-section wow fadeInUp" data-wow-delay="1s">
           <div>
             <a href = "#about-me-section" id="about-me-section" className = "section-anchor">about me section</a>
             <h2 className = "section-title">About Me</h2>

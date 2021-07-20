@@ -11,9 +11,8 @@ import developer from './assets/developer.svg';
 import bscg from './assets/bsc_games_screenshot.png';
 import nerdycruise from './assets/nerdycruise.png';
 import weatherApp from './assets/weather-app.png';
-import tBestFashion from './assets/t-best-fashion.png';
 import Project from './components/Project';
-import resume from './assets/Adekunle Michael Ajayi resume.pdf'
+import resume from './assets/Ajayi-Adekunle-Michael-Resume.pdf'
 import WOW from "wowjs"
 import "wowjs/css/libs/animate.css";
 import Typewriter from 'typewriter-effect';
@@ -34,12 +33,12 @@ function App() {
 
     const projectsData = [
       {
-        name: "BSC GAMES",
+        name: "BSC GAMES DIVIDEND",
         image: bscg,
-        stacks: ["React.js", "web3.js", "Solidity", "Netlify"],
-        description: "This is a Dapp. It is currently a work in progress. It is a blockchain based game where user places bet with a cryptocurrency (BNB) the user either win or lose, if a user wins, the winning amount is credited to the user's wallet, if otherwise, the amount used to place the bet is gone. However, in either case, the user is payed certain amount of bscg (the native token of the platform) for placing a bet. check it out to see lots of other features",
-        live_link: "https://hardcore-meninsky-707284.netlify.app/",
-        repo_link: "https://github.com/BSC-GAMES/ui"
+        stacks: ["React.js", "Web3.js", "Tailwind.css", "Netlify"],
+        description: "This is a Dapp. It is currently a work in progress. It is a blockchain based dividend app. where user freeze a token and earn BNB as a reward. check it out to see lots of other features",
+        live_link: "https://dividend.bscgames.win",
+        repo_link: "/"
       },
       {
         name: "NerdyCruise",
@@ -56,14 +55,6 @@ function App() {
         description: "A progressive web application that tells the weather condition of any city in the world with the help of OPEN WEATHER MAP API",
         live_link: "https://weather-pwa-aap.web.app/",
         repo_link: "https://github.com/AjayiMike/mercy-s-weather-app"
-      },
-      {
-        name: "T-Best Fashion",
-        image: tBestFashion,
-        stacks: ["React.js", "Firebase"],
-        description: "A website for a local fashion design shop",
-        live_link: "https://t-best-fashion.web.app/",
-        repo_link: "https://github.com/AjayiMike/t-best-fashion"
       }
 
     ]
@@ -213,10 +204,13 @@ function App() {
                 .typeString("<h1 className = 'introduction' style = 'display:inline;'><span className = 'hi-there' style = 'letter-spacing: 3px; font-size: 1rem; color: #FFC392;'>Hi there!</span><br /> <span className = 'i-am' style = 'font-size: 1.5rem; letter-spacing: 3px; 1.8rem;color: rgba(#e5f4e3, .8)'>I am</span><br /> <span className = 'name' style = 'letter-spacing: 3px; font-size: 1.5rem'>ADEKUNLE MICHAEL A.</span> </h1>")
                 .pauseFor(5000)
                 .deleteChars(20)
+                .typeString("<h1 style = 'display:inline;'><span style = 'letter-spacing: 3px; font-size: 1.5rem'>A DApp Developer</span><h1>")
+                .pauseFor(5000)
+                .deleteChars(16)
                 .typeString("<h1 style = 'display:inline;'><span style = 'letter-spacing: 3px; font-size: 1.5rem'>A Web Developer</span><h1>")
                 .pauseFor(5000)
                 .deleteChars(15)
-                .typeString("<h1 style = 'display:inline;'><span style = 'letter-spacing: 3px; font-size: 1.5rem'>A Blockchain and DApp Enthusiast</span></h1>")
+                .typeString("<h1 style = 'display:inline;'><span style = 'letter-spacing: 3px; font-size: 1.5rem'>A Blockchain Enthusiast</span></h1>")
                 .pauseFor(5000)
                 .deleteAll()
                 .start();
@@ -244,10 +238,13 @@ function App() {
                     .typeString("<h1 className = 'introduction' style = 'display:inline;'><span className = 'hi-there' style = 'letter-spacing: 3px; font-size: 1rem; color: #FFC392;'>Hi there!</span><br /> <span className = 'i-am' style = 'font-size: 1.5rem; letter-spacing: 3px; 1.8rem;color: rgba(#e5f4e3, .8)'>I am</span><br /> <span className = 'name' style = 'letter-spacing: 3px; font-size: 1.5rem'>ADEKUNLE MICHAEL A.</span> </h1>")
                     .pauseFor(5000)
                     .deleteChars(20)
+                    .typeString("<h1 style = 'display:inline;'><span style = 'letter-spacing: 3px; font-size: 1.5rem'>A DApp Developer</span><h1>")
+                    .pauseFor(5000)
+                    .deleteChars(16)
                     .typeString("<h1 style = 'display:inline;'><span style = 'letter-spacing: 3px; font-size: 1.5rem'>A Web Developer</span><h1>")
                     .pauseFor(5000)
                     .deleteChars(15)
-                    .typeString("<h1 style = 'display:inline;'><span style = 'letter-spacing: 3px; font-size: 1.5rem'>A Blockchain and DApp Enthusiast</span></h1>")
+                    .typeString("<h1 style = 'display:inline;'><span style = 'letter-spacing: 3px; font-size: 1.5rem'>A Blockchain Enthusiast</span></h1>")
                     .pauseFor(5000)
                     .deleteAll()
                     .start();
@@ -259,7 +256,7 @@ function App() {
               />
             </div> 
             <div className = "call-to-action wow fadeInUp">
-              <p>I am a very skillful web developer, with knowledge and proficiency in building fast, scalable and responsive web applications as well as the ability of writing clean and maintainable code</p>
+              <p>I am a very skillful DApp &amp; web developer, with knowledge and proficiency in building fast, scalable and responsive decentralized web applications as well as the ability of writing clean and maintainable code</p>
               <div className = "btn-groups">
                 <a href = "mailto:ajayimikeofficial@gmail.com" className = "call-to-action-btn">Hire me</a>
                 <a href = {resume} className = "resume" download> Download CV <RiFileDownloadLine className = "icon"/></a>
@@ -274,7 +271,7 @@ function App() {
           {screenSize < 992 ? 
           
           <div className = "call-to-action wow fadeInUp">
-              <p>I am a very skillful web developer, with knowledge and proficiency in building fast, scalable and responsive web applications as well as the ability of writing clean and maintainable code</p>
+              <p>I am a very skillful DApp &amp; web developer, with knowledge and proficiency in building fast, scalable and responsive decentralized web applications as well as the ability of writing clean and maintainable code</p>
               <div className = "btn-groups">
                 <a href = "mailto:ajayimikeofficial@gmail.com" className = "call-to-action-btn">Hire me</a>
                 <a href = {resume} className = "resume" download> Download CV <RiFileDownloadLine/></a>
@@ -288,10 +285,10 @@ function App() {
             <a href = "#about-me-section" id="about-me-section" className = "section-anchor">about me section</a>
             <h2 className = "section-title">About Me</h2>
             <p className = "section-text">
-              Hello! thanks for coming around. Adekunle Michael Ajayi is my name. I am a Web developer and currently studying Computer science at The Federal University of Technlogy Minna, Nigeria.
+              Hello! thanks for coming around. Adekunle Michael Ajayi is my name. I am a DApp &amp; Web developer and currently studying Computer science at The Federal University of Technlogy Minna, Nigeria.
             </p>
             <p className = "section-text">
-              I recently picked interest in Web3 technology and i am elated to get an opportuninty to bridge my education with real world pratical experience that i can learn and grow from
+              I recently picked interest in Web3 technology and I am elated to get an opportuninty to bridge my education with real world pratical experience that I can learn and grow from
             </p>
           </div>
           
@@ -303,7 +300,7 @@ function App() {
         <div className = "sections projects-section wow fadeInUp" data-wow-delay="1s">
           <a href = "#projects-section" id="projects-section" className = "section-anchor">projects section</a>
           <h2 className = "section-title">Projects</h2>
-          <p>These are some of the project i have worked on over the years in my developer journey</p>
+          <p>These are some of the project I have worked on over the years in my developer journey</p>
 
           <div className = "projects-gallery">
            { projectsData.map((projectData, index) => {
@@ -337,7 +334,7 @@ function App() {
               <a href = "https://github.com/AjayiMike" target="_blank" rel="noreferrer"><AiFillGithub className = "icon" /></a>
             </li>
             <li className = "contact-link-item">
-              <a href = "https://www.linkedin.com/in/adekunle-ajayi-a0b256208" target="_blank" rel="noreferrer"><AiFillLinkedin className = "icon" /></a>
+              <a href = "https://www.linkedin.com/in/adekunle-michael-ajayi" target="_blank" rel="noreferrer"><AiFillLinkedin className = "icon" /></a>
             </li>
             <li className = "contact-link-item">
               <a href = "tel:07089691306"><IoIosCall className = "icon" /></a>

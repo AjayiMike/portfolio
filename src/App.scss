@@ -1,743 +1,712 @@
 $primary: #33323e;
-$secondary: #FFC392;
+$secondary: #ffc392;
 $white: #e5f4e3;
 
-
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 body {
-    background-color: $primary;
-    width: 100%;
-    height: 100vh;
-    color: $white;
+  background-color: $primary;
+  width: 100%;
+  height: 100vh;
+  color: $white;
 }
 
 .btn {
-    padding: 1.5rem .5rem;
-    border-radius: .3rem;
+  padding: 1.5rem 0.5rem;
+  border-radius: 0.3rem;
 }
 
 .App {
+  width: 100%;
+  overflow-x: hidden;
+
+  header {
     width: 100%;
-    overflow-x: hidden;
-    
-    header {
-        width: 100%;
-        height: 4rem;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: .8rem;
-        box-shadow: 0 .05rem .3rem #000;
-        background-color: $primary;
-        position: fixed;
-        top: 0;
-        z-index: 5;
-        border-bottom: 1px solid rgba($white, .4);
-        h1 {
-            font-weight: 900;
+    height: 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem;
+    box-shadow: 0 0.05rem 0.3rem #000;
+    background-color: $primary;
+    position: fixed;
+    top: 0;
+    z-index: 5;
+    border-bottom: 1px solid rgba($white, 0.4);
+    h1 {
+      font-weight: 900;
+      color: $white;
+      font-size: 1.5rem;
+      letter-spacing: 0.2rem;
+      cursor: default;
+      span {
+        color: $secondary;
+        display: inline-block;
+      }
+    }
+    .hamburger {
+      font-size: 1.8rem;
+      color: $white;
+      cursor: pointer;
+      z-index: 3;
+      transition: all ease-in-out 0.3s;
+    }
+    .hamburger-rotate {
+      font-size: 1.5rem;
+      transform: rotate(90deg);
+      transition: all ease-in-out 0.3s;
+    }
+  }
+
+  .sidebar {
+    // width: 100vw;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(#000, 0.1);
+    z-index: 2;
+    transition: all ease-in-out 0.3s;
+    display: none;
+    .navlinks-container {
+      // width: 55vw;
+      width: 55%;
+      height: 100%;
+      position: absolute;
+      background: #4f4e5f;
+      // right: -55vw;
+      right: -55%;
+      box-shadow: -0.1rem 0 1.5rem #000;
+
+      ul {
+        list-style: none;
+        padding-top: 6rem;
+        height: 100%;
+        overflow-y: scroll;
+
+        li {
+          margin: 2rem 0;
+          a {
+            text-decoration: none;
             color: $white;
-            font-size: 1.5rem;
-            letter-spacing: .2rem;
-            cursor: default;
-            span {
-                color: $secondary;
-                display: inline-block;
-            }
-        }
-        .hamburger {
-            font-size: 1.8rem;
-            color: $white;
-            cursor: pointer;
-            z-index: 3;
-            transition: all ease-in-out .3s;
-        }
-        .hamburger-rotate {
-            font-size: 1.5rem;
-            transform: rotate(90deg);
-            transition: all ease-in-out .3s;
-        }
-    }
-
-    .sidebar {
-        // width: 100vw;
-        width: 100%;
-        height: 100vh;
-        position: fixed;
-        top: 0;
-        left: 0;
-        background: rgba(#000, .1);
-        z-index: 2;
-        transition: all ease-in-out .3s;
-        display: none;
-        .navlinks-container {
-            // width: 55vw;
-            width: 55%;
-            height: 100%;
-            position: absolute;
-            background: #4f4e5f;
-            // right: -55vw;
-            right: -55%;
-            box-shadow: -.1rem 0 1.5rem #000;
-                
-            ul {
-                list-style: none;
-                padding-top: 6rem;
-                height: 100%;
-                overflow-y: scroll;
-
-                li{
-                    margin: 2rem 0;
-                    a {
-                        text-decoration: none;
-                        color: $white;
-                        font-weight: 500;
-                        padding: 1rem 2.5rem;
-                    }
-    
-                    .resume .download-icon {
-                        color: $secondary;
-                        vertical-align: bottom;
-                        font-size: 1.2rem;
-                    }
-                    .active {
-                        background: $secondary;
-                        color: $primary;
-                        box-shadow: 0 0 2rem rgba(#000, .5);
-                    }
-                }
-            }
-            
-        }
-        .show-nav {
-            animation: slideInNav ease-in-out .3s;
-            animation-fill-mode: forwards;
-        }
-        .hide-nav {
-            animation: slideOutNav ease-in-out .3s;
-            animation-fill-mode: forwards;
-        }
-
-
-    }
-    .show-backdrop {
-        display: block;
-        animation: fadeInBackdrop ease-in-out .3s;
-        animation-fill-mode: forwards;
-    }
-
-    .top-fixed-container {
-        width: 100%;
-        height: 20rem;
-        position: fixed;
-        left: 0;
-        top: 4rem; //immediately after the header
-        z-index: -1;
-        .picture-container {
-            width: 100%;
-            height: 100%;
-            .top-picture {
-                display: block;
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-            }
-            .bg-overlay {
-                width: 100%;
-                height: 100%;
-                background: radial-gradient(rgba($primary, .6), rgba($primary, .8), $primary);
-                position: absolute;
-                top: 0;
-                left: 0;
-            }
-        }
-        .greeting-section {
-            width: 100%;
-            height: 100%;
-            position: absolute;
-            top: 0;
-            left: 0;
-            padding: 1.5rem;
-            padding-top: 8rem;
-            .introduction {
-                span {
-                    display: block;
-                    margin-top: 1rem;
-                    letter-spacing: 3px;
-                }
-                .hi-there {
-                    font-size: 1rem;
-                    color: $secondary;
-                }
-                .i-am {
-                    font-size: 1.5rem;
-                    color: rgba($white, .8)
-                }
-                .name {
-                    font-size: 1.5rem;
-                }
-            }
-        }
-        
-    }
-
-    .main-content {
-        background: $primary;
-        margin-top: 30rem;              
-        .call-to-action {
-            padding: 1rem;
-            line-height: 1.5;
-            p {
-                font-size: 1.1rem;
-                &::first-letter {
-                    font-size: 1.5rem;
-                }
-            }
-            .btn-groups {
-                margin-top: 2rem;
-                display: flex;
-                justify-content: flex-start;
-                .call-to-action-btn, .resume {
-                    text-decoration: none;
-                    color: $white;
-                    padding: .5rem 1rem;
-                    font-weight: 500;
-                    font-size: 1.2rem;
-                    border-radius: .5rem;
-                }
-                .call-to-action-btn {
-                    background: $secondary;
-                    border: 1px solid $secondary;
-                    color: $primary;
-                    margin-right: 2rem;
-                    &:hover {
-                        background: transparent;
-                        transition: all ease-in-out .3s;
-                        color: $secondary;
-                    }
-                }
-                .resume {
-                    border: 1px solid $secondary;
-                    color: $secondary;
-                    transition: all ease-in-out .3s;
-                    font-size: .8rem;
-                    &:hover {
-                        background: $secondary;
-                        color: $primary;
-                    }
-                }
-            }
-            
-        }
-
-        .sections {
-            min-height: 25rem;
-            margin: 10rem auto;
-            padding: 1.5rem;
-            width: 100%;
-            &:last-of-type {
-                margin-bottom: 0;
-                padding-bottom: 10rem;
-            }
-            .section-anchor {
-                display: block;
-                position: relative;
-                top: -6rem;
-                visibility: hidden;
-            }
-            .section-title {
-                font-size: 2.3rem;
-                margin-bottom: 2rem;
-            }
-            .section-text {
-                margin-bottom: 1rem;
-                font-size: .9rem;
-                
-            }
-            .image-container {
-                width: 100%;
-                padding: .6rem;
-                margin-top: 5rem;
-                img {
-                    width: 100%;
-                    height: 100%;
-                    object-fit: contain;
-                }
-            }
-        }
-
-        .projects-gallery {
-            margin: 2rem 0rem;
-
-            .project {
-                padding: 2rem 1.5rem;
-                display: flex;
-                flex-direction: column;
-                border: 1px solid rgba($white, .7);
-                margin: 8rem auto;
-
-                &:first-of-type {
-                    margin-top: 5rem;
-                }
-
-                .preview-image-container {
-                    width: 100%;
-                    margin-bottom: 3rem;
-                    
-                    img {
-                        width: 100%;
-                        height: 100%;
-                        object-fit: contain;
-                    }
-                }
-                .project-details {
-                    position: relative;
-                    .project-name {
-                        color: $white;
-                        font-size: 1.8rem;
-                        font-family: 900;
-                    }
-                    .stacks {
-                        list-style: none;
-                        border-bottom: 1px solid rgba($secondary, .3);
-                        padding-bottom: .5rem;
-                        margin-bottom: 2rem;
-                        li {
-                            display: inline-block;
-                            color: rgba($secondary, .6);
-                            position: relative;
-                            font-size: .8rem;
-                            
-                            &:not(li:first-of-type) {
-                                margin-left: 1.5rem;
-                                &::before {
-                                    content: "";
-                                    width: .3rem;
-                                    height: .3rem;
-                                    border-radius: 30px;
-                                    position: absolute;
-                                    top: 35%;
-                                    left: -1rem;
-                                    background: $white;
-    
-                                }
-                            }
-                            
-                        }
-                    }
-                    .description {
-                        font-size: .9rem;
-                        font-weight: 400;
-                        margin-bottom: 2rem;
-                        line-height: 1.5;
-                    }
-                    .link-group {
-                        position: absolute;
-                        bottom: 0;
-                        right: 0;
-                        
-
-                        a {
-                            color: rgba($white, .7);
-                            text-decoration: none;
-                            &:nth-child(2) {
-                                margin-left: 2rem;
-                            }
-                            .link-icon {
-                                font-size: 1.5rem;
-                                vertical-align: middle;
-                                margin-right: .5rem;
-                            }
-                            span {
-                                vertical-align: middle;
-                                font-size: .9rem;
-                                border-bottom: 1px solid rgba($white, .7);
-                                padding-bottom: -1px;
-
-                            }
-                            &:hover {
-                                color: rgba($white, 1);
-                            }
-                        }
-                    }
-                }
-            }
-        }
-        
-        .contact-section {
-            .contact-links {
-                list-style: none;
-                width: 100%;
-                display: flex;
-                justify-content: flex-start;
-                margin-top: 3rem;
-                .contact-link-item {
-                    padding: 1rem;
-                    background: rgba($white, .2);
-                    border-radius: 50%;
-                    transition: all ease-in-out .3s;
-                    color: $white;
-                    margin-right: 1.5rem;     
-                    &:hover {
-                        background: rgba($white, 1);
-                        color: $primary;
-                    }
-                    a {
-                        color: inherit;
-                        .icon {
-                            font-size: 1.2rem;
-                            color: inherit
-                            
-                        }
-                    }
-                }
-            }
-        }
-    }
-
-    footer {
-        width: 100%;
-        padding: 3rem 1rem;
-        background: rgba($white, .1);
-        font-size: 1.2rem;
-        p {
-            text-align: center;
-            font-size: .9rem;
             font-weight: 500;
-            line-height: 1.5;
-            span {
-                color: $secondary;
-            }
+            padding: 1rem 2.5rem;
+          }
+
+          .resume .download-icon {
+            color: $secondary;
+            vertical-align: bottom;
+            font-size: 1.2rem;
+          }
+          .active {
+            background: $secondary;
+            color: $primary;
+            box-shadow: 0 0 2rem rgba(#000, 0.5);
+          }
         }
+      }
     }
+    .show-nav {
+      animation: slideInNav ease-in-out 0.3s;
+      animation-fill-mode: forwards;
+    }
+    .hide-nav {
+      animation: slideOutNav ease-in-out 0.3s;
+      animation-fill-mode: forwards;
+    }
+  }
+  .show-backdrop {
+    display: block;
+    animation: fadeInBackdrop ease-in-out 0.3s;
+    animation-fill-mode: forwards;
+  }
+
+  .top-fixed-container {
+    width: 100%;
+    height: 20rem;
+    position: fixed;
+    left: 0;
+    top: 4rem; //immediately after the header
+    z-index: -1;
+    .picture-container {
+      width: 100%;
+      height: 100%;
+      .top-picture {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .bg-overlay {
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(
+          rgba($primary, 0.6),
+          rgba($primary, 0.8),
+          $primary
+        );
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+    }
+    .greeting-section {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      padding: 1.5rem;
+      padding-top: 8rem;
+      .introduction {
+        span {
+          display: block;
+          margin-top: 1rem;
+          letter-spacing: 3px;
+        }
+        .hi-there {
+          font-size: 1rem;
+          color: $secondary;
+        }
+        .i-am {
+          font-size: 1.5rem;
+          color: rgba($white, 0.8);
+        }
+        .name {
+          font-size: 1.5rem;
+        }
+      }
+    }
+  }
+
+  .main-content {
+    background: $primary;
+    margin-top: 30rem;
+    .call-to-action {
+      padding: 1rem;
+      line-height: 1.5;
+      p {
+        font-size: 1.1rem;
+        &::first-letter {
+          font-size: 1.5rem;
+        }
+      }
+      .btn-groups {
+        margin-top: 2rem;
+        display: flex;
+        justify-content: flex-start;
+        .call-to-action-btn,
+        .resume {
+          text-decoration: none;
+          color: $white;
+          padding: 0.5rem 1rem;
+          font-weight: 500;
+          font-size: 1.2rem;
+          border-radius: 0.5rem;
+        }
+        .call-to-action-btn {
+          background: $secondary;
+          border: 1px solid $secondary;
+          color: $primary;
+          margin-right: 2rem;
+          &:hover {
+            background: transparent;
+            transition: all ease-in-out 0.3s;
+            color: $secondary;
+          }
+        }
+        .resume {
+          border: 1px solid $secondary;
+          color: $secondary;
+          transition: all ease-in-out 0.3s;
+          font-size: 0.8rem;
+          &:hover {
+            background: $secondary;
+            color: $primary;
+          }
+        }
+      }
+    }
+
+    .sections {
+      min-height: 25rem;
+      margin: 10rem auto;
+      padding: 1.5rem;
+      width: 100%;
+      &:last-of-type {
+        margin-bottom: 0;
+        padding-bottom: 10rem;
+      }
+      .section-anchor {
+        display: block;
+        position: relative;
+        top: -6rem;
+        visibility: hidden;
+      }
+      .section-title {
+        font-size: 2.3rem;
+        margin-bottom: 2rem;
+      }
+      .section-text {
+        margin-bottom: 1rem;
+        font-size: 0.9rem;
+      }
+      .image-container {
+        width: 100%;
+        padding: 0.6rem;
+        margin-top: 5rem;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+        }
+      }
+    }
+
+    .projects-gallery {
+      margin: 2rem 0rem;
+
+      .project {
+        padding: 2rem 1.5rem;
+        display: flex;
+        flex-direction: column;
+        border: 1px solid rgba($white, 0.7);
+        margin: 8rem auto;
+
+        &:first-of-type {
+          margin-top: 5rem;
+        }
+
+        .preview-image-container {
+          width: 100%;
+          margin-bottom: 3rem;
+
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+          }
+        }
+        .project-details {
+          position: relative;
+          .project-name {
+            color: $white;
+            font-size: 1.6rem;
+            font-family: 900;
+            margin-bottom: 0.4rem;
+          }
+          .stacks {
+            list-style: none;
+            border-bottom: 1px solid rgba($secondary, 0.3);
+            padding-bottom: 0.5rem;
+            margin-bottom: 2rem;
+            li {
+              display: inline-block;
+              color: rgba($secondary, 0.6);
+              position: relative;
+              font-size: 0.8rem;
+
+              &:not(li:first-of-type) {
+                margin-left: 1.5rem;
+                &::before {
+                  content: "";
+                  width: 0.3rem;
+                  height: 0.3rem;
+                  border-radius: 30px;
+                  position: absolute;
+                  top: 35%;
+                  left: -1rem;
+                  background: $white;
+                }
+              }
+            }
+          }
+          .description {
+            font-size: 0.9rem;
+            font-weight: 400;
+            margin-bottom: 2rem;
+            line-height: 1.5;
+          }
+          .link-group {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+
+            a {
+              color: rgba($white, 0.7);
+              text-decoration: none;
+              &:nth-child(2) {
+                margin-left: 2rem;
+              }
+              .link-icon {
+                font-size: 1.5rem;
+                vertical-align: middle;
+                margin-right: 0.5rem;
+              }
+              span {
+                vertical-align: middle;
+                font-size: 0.9rem;
+                border-bottom: 1px solid rgba($white, 0.7);
+                padding-bottom: -1px;
+              }
+              &:hover {
+                color: rgba($white, 1);
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .contact-section {
+      .contact-links {
+        list-style: none;
+        width: 100%;
+        display: flex;
+        justify-content: flex-start;
+        margin-top: 3rem;
+        .contact-link-item {
+          padding: 1rem;
+          background: rgba($white, 0.2);
+          border-radius: 50%;
+          transition: all ease-in-out 0.3s;
+          color: $white;
+          margin-right: 1.5rem;
+          &:hover {
+            background: rgba($white, 1);
+            color: $primary;
+          }
+          a {
+            color: inherit;
+            .icon {
+              font-size: 1.2rem;
+              color: inherit;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  footer {
+    width: 100%;
+    padding: 3rem 1rem;
+    background: rgba($white, 0.1);
+    font-size: 1.2rem;
+    p {
+      text-align: center;
+      font-size: 0.9rem;
+      font-weight: 500;
+      line-height: 1.5;
+      span {
+        color: $secondary;
+      }
+    }
+  }
 }
 
 @keyframes slideInNav {
-    0% {
-        right: -55%;
-    }
-    100% {
-        right: 0%;
-    }
+  0% {
+    right: -55%;
+  }
+  100% {
+    right: 0%;
+  }
 }
 
 @keyframes slideOutNav {
-    0% {
-        right: 0%;
-    }
-    100% {
-        right: -55%;
-    }
+  0% {
+    right: 0%;
+  }
+  100% {
+    right: -55%;
+  }
 }
 
 @keyframes fadeInBackdrop {
-    0% {
-        background: rgba(#000, .1);
-    }
-    100% {
-        background: rgba(#000, .5);
-    }
+  0% {
+    background: rgba(#000, 0.1);
+  }
+  100% {
+    background: rgba(#000, 0.5);
+  }
 }
-
 
 @media only screen and (min-width: 768px) {
-
-    .App {
-        
-        header {
-            padding: 2rem;
-        }
-        .main-content {
-            padding: 5rem 5rem 0;
-            .call-to-action {
-
-                p {
-                    font-size: 1.5rem;
-                }
-
-                .btn-groups {
-                    margin-top: 4rem;
-                    .call-to-action-btn {
-                        margin-right: 3.5rem;
-                    }
-                }
-            }
-
-            .sections {
-                .section-text {
-                    font-size: 1.3rem;
-                }
-                .image-container {
-                    height: 20rem;
-                }
-            }
-
-            .projects-section {
-                p {
-                    font-size: 1.2rem;
-
-                }
-
-                .project .project-details .description {
-                    font-size: 1.2rem;
-                }
-            } 
-            
-        }
-
-        .greeting-section {
-            padding: 4rem;
-            padding-top: 8rem;
-        }
-
+  .App {
+    header {
+      padding: 2rem;
     }
-    
-
-
-
-    .big-screen-nav {
-        max-width: 85%;
-        ul{
-            list-style: none;
-            display: flex;
-            .link-items {
-                margin: 0 .2rem;
-                .nav-links {
-                    text-decoration: none;
-                    color: $white;
-                    font-weight: 500;
-                    transition: all ease-in-out .3s;
-                    padding: .5rem 1rem;
-                    &:hover {
-                        color: $secondary;
-                    }
-
-                }
-                .resume .download-icon {
-                    color: $secondary;
-                    vertical-align: bottom;
-                    font-size: 1.2rem;
-                }
-
-                .active {
-
-                    border: 1px solid $secondary;
-                    border-radius: .2rem;
-                    color: $secondary;
-                    box-shadow: 0 0 2rem rgba(#000, .5);
-                    
-                }
-            }
+    .main-content {
+      padding: 5rem 5rem 0;
+      .call-to-action {
+        p {
+          font-size: 1.5rem;
         }
+
+        .btn-groups {
+          margin-top: 4rem;
+          .call-to-action-btn {
+            margin-right: 3.5rem;
+          }
+        }
+      }
+
+      .sections {
+        .section-text {
+          font-size: 1.3rem;
+        }
+        .image-container {
+          height: 20rem;
+        }
+      }
+
+      .projects-section {
+        p {
+          font-size: 1.2rem;
+        }
+
+        .project .project-details .description {
+          font-size: 1.2rem;
+        }
+      }
     }
+
+    .greeting-section {
+      padding: 4rem;
+      padding-top: 8rem;
+    }
+  }
+
+  .big-screen-nav {
+    max-width: 85%;
+    ul {
+      list-style: none;
+      display: flex;
+      .link-items {
+        margin: 0 0.2rem;
+        .nav-links {
+          text-decoration: none;
+          color: $white;
+          font-weight: 500;
+          transition: all ease-in-out 0.3s;
+          padding: 0.5rem 1rem;
+          &:hover {
+            color: $secondary;
+          }
+        }
+        .resume .download-icon {
+          color: $secondary;
+          vertical-align: bottom;
+          font-size: 1.2rem;
+        }
+
+        .active {
+          border: 1px solid $secondary;
+          border-radius: 0.2rem;
+          color: $secondary;
+          box-shadow: 0 0 2rem rgba(#000, 0.5);
+        }
+      }
+    }
+  }
 }
-
 
 @media only screen and (min-width: 992px) {
+  .big-screen-nav ul .link-items {
+    margin: 0 0rem;
+    .nav-links {
+      padding: 0.5rem 1.2rem;
+    }
+  }
 
-    .big-screen-nav ul .link-items {
-        margin: 0 0rem;
-        .nav-links {
-            padding: .5rem 1.2rem;
+  .App {
+    .top-fixed-container {
+      width: 100%;
+      height: calc(100vh - 4rem);
+      max-height: 45rem;
+      position: fixed;
+      left: 0;
+      top: 4rem; //immediately after the header
+      z-index: 0;
+      position: absolute;
+      .picture-container {
+        width: 100%;
+        height: 100%;
+        .top-picture {
+          // display: block;
+          // width: 100%;
+          // height: 100%;
+          // object-fit: cover;
         }
+      }
+      .content-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        padding: 2rem;
+        .greeting-section {
+          position: static;
+          height: 100%;
+          padding-bottom: 0;
+          padding-top: 20rem;
+          .Typewriter__cursor {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: $secondary;
+            display: inline-block;
+          }
+        }
+        .call-to-action {
+          height: 100%;
+          p {
+            font-size: 1.5rem;
+            font-weight: 500;
+            line-height: 1.8;
+            margin-top: 20rem;
+            &::first-letter {
+              font-size: 2rem;
+              font-weight: 900;
+            }
+          }
+          .btn-groups {
+            margin-top: 2rem;
+            display: flex;
+            justify-content: flex-start;
+            .call-to-action-btn,
+            .resume {
+              text-decoration: none;
+              padding: 0.7rem 1.5rem;
+              font-weight: 700;
+              font-size: 1.3rem;
+              border-radius: 0.2rem;
+            }
+            .call-to-action-btn {
+              background: $secondary;
+              border: 1px solid $secondary;
+              color: $primary;
+              margin-right: 3rem;
+              transition: all ease-in-out 0.5s;
+              &:hover {
+                background: transparent;
+                color: $secondary;
+              }
+            }
+            .resume {
+              border: 1px solid $secondary;
+              color: $secondary;
+              transition: all ease-in-out 0.5s;
+              font-size: 1rem;
+              &:hover {
+                background: $secondary;
+                color: $primary;
+              }
+              .icon {
+                font-size: 1.1rem;
+                vertical-align: bottom;
+              }
+            }
+          }
+        }
+      }
     }
 
-    .App {
-        
-        .top-fixed-container {
+    .main-content {
+      padding: 0 10vw;
+      margin-top: 48rem;
+      .about-me-section {
+        display: flex;
+        justify-content: space-between;
+        div {
+          margin-right: 1rem;
+          align-self: flex-end;
+          width: 50%;
+          .section-text {
+            font-size: 1.2rem;
+            margin-bottom: 0;
+          }
+        }
+        .image-container {
+          margin-left: 1rem;
+          width: 50%;
+        }
+      }
+
+      .projects-section {
+        .projects-gallery {
+          .project {
             width: 100%;
-            height: calc(100vh - 4rem);
-            max-height: 45rem;
-            position: fixed;
-            left: 0;
-            top: 4rem; //immediately after the header
-            z-index: 0;
-            position: absolute;
-            .picture-container {
-                width: 100%;
-                height: 100%;
-                .top-picture {
-                    // display: block;
-                    // width: 100%;
-                    // height: 100%;
-                    // object-fit: cover;
-                }
-                
+            max-height: 30rem;
+            padding: 2rem;
+            flex-direction: row;
+            box-shadow: 0 0.5rem 1rem rgba(#000724, 0.7);
+            .preview-image-container {
+              width: 50%;
+              margin-bottom: 0;
+              margin-right: 1rem;
             }
-            .content-container {
-                display: flex;
-                justify-content: space-between;
-                align-items: flex-end;
-                width: 100%;
-                height: 100%;
-                position: absolute;
-                top: 0;
-                left: 0;
-                bottom: 0;
-                padding: 2rem;
-                .greeting-section {
-                    position: static;
-                    height: 100%;
-                    padding-bottom: 0;
-                    padding-top: 20rem;
-                    .Typewriter__cursor {
-                        font-size: 1.5rem;
-                        font-weight: 700;
-                        color: $secondary;
-                        display: inline-block;
-                    }
-                    
-                }
-                .call-to-action {
-                    height: 100%;
-                    p {
-                        font-size: 1.5rem;
-                        font-weight: 500;
-                        line-height: 1.8;
-                        margin-top: 20rem;
-                        &::first-letter {
-                            font-size: 2rem;
-                            font-weight: 900;
-                        }
-                    }
-                    .btn-groups {
-                        margin-top: 2rem;
-                        display: flex;
-                        justify-content: flex-start;
-                        .call-to-action-btn, .resume {
-                            text-decoration: none;
-                            padding: .7rem 1.5rem;
-                            font-weight: 700;
-                            font-size: 1.3rem;
-                            border-radius: .2rem;
-                            
-                        }
-                        .call-to-action-btn {
-                            background: $secondary;
-                            border: 1px solid $secondary;
-                            color: $primary;
-                            margin-right: 3rem;
-                            transition:  all ease-in-out .5s;
-                            &:hover {
-                                background: transparent;
-                                color: $secondary;
-                            }
-                        }
-                        .resume {
-                            border: 1px solid $secondary;
-                            color: $secondary;
-                            transition: all ease-in-out .5s;
-                            font-size: 1rem;
-                            &:hover {
-                                background: $secondary;
-                                color: $primary;
-                            }
-                            .icon {
-                                font-size: 1.1rem;
-                                vertical-align: bottom;
-                            }
-                        }
-                    }
-                }
+
+            .project-details {
+              width: 50%;
+              margin-left: 1rem;
+              .project-name {
+                font-size: 2rem;
+                font-weight: 900;
+                margin-bottom: 1rem;
+              }
+              .description {
+                font-size: 1rem;
+                line-height: 1.2;
+              }
             }
-            
+          }
         }
-
-    
-            .main-content {
-                padding: 0 10vw;
-                margin-top: 48rem;
-                .about-me-section {
-                    display: flex;
-                    justify-content: space-between;
-                    div {
-                        margin-right: 1rem;
-                        align-self: flex-end;
-                        width: 50%;
-                        .section-text {
-                            font-size: 1.2rem;
-                            margin-bottom: 0;
-                        }
-                    }
-                    .image-container {
-                        margin-left: 1rem;
-                        width: 50%;
-                    }
-                }
-    
-                .projects-section {
-                    .projects-gallery {
-                        .project {
-                            width: 100%;
-                            max-height: 30rem;
-                            padding: 2rem;
-                            flex-direction: row;
-                            box-shadow: 0 .5rem 1rem rgba(#000724, .7);
-                            .preview-image-container {
-                                width: 50%;
-                                margin-bottom: 0;
-                                margin-right: 1rem;
-                            }
-    
-                            .project-details {
-                                width: 50%;
-                                margin-left: 1rem;
-                                .project-name {
-                                    font-size: 2rem;
-                                    font-weight: 900;
-                                    margin-bottom: 1rem;
-                                }
-                                .description {
-                                    font-size: 1rem;
-                                    line-height: 1.2;
-                                }
-                            }
-                        }
-                    }
-                }
-            }
+      }
     }
+  }
 }
-
 
 @media only screen and (min-width: 1200px) {
-
-    .App {
-        .top-fixed-container .content-container {
-
-            .greeting-section {
-                padding-top: 34vh;
-            }
-            .call-to-action p {
-                margin-top: 33vh;
-            }
-    
-        }
-
-        .main-content {
-            // margin-top: 3rem;
-        }
+  .App {
+    .top-fixed-container .content-container {
+      .greeting-section {
+        padding-top: 34vh;
+      }
+      .call-to-action p {
+        margin-top: 33vh;
+      }
     }
+
+    .main-content {
+      // margin-top: 3rem;
+    }
+  }
 }
 
-
 @media only screen and (min-width: 1920px) {
-    .App {
-        .top-fixed-container {
-            height: calc(100vh - 4rem);
-            max-height: 60rem;
-        }
-
-        .main-content {
-            margin-top: 64rem;
-        }
+  .App {
+    .top-fixed-container {
+      height: calc(100vh - 4rem);
+      max-height: 60rem;
     }
+
+    .main-content {
+      margin-top: 64rem;
+    }
+  }
 }

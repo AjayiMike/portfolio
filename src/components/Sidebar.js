@@ -1,5 +1,5 @@
 import {RiFileDownloadLine} from 'react-icons/ri';
-import resume from '../assets/Adekunle Michael Ajayi resume.pdf';
+import resume from '../assets/Ajayi-Adekunle-Michael-Resume.pdf';
 
 const Sideber = ({showHideSidebar, linkClickHandler}) => {
     

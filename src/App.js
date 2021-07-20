@@ -288,7 +288,7 @@ function App() {
               Hello! thanks for coming around. Adekunle Michael Ajayi is my name. I am a DApp &amp; Web developer and currently studying Computer science at The Federal University of Technlogy Minna, Nigeria.
             </p>
             <p className = "section-text">
-              I recently picked interest in Web3 technology and I am elated to get an opportuninty to bridge my education with real world pratical experience that I can learn and grow from
+              I recently picked interest in Web3 technology and I am elated to get an opportuninty to bridge my education with real world practical experience that I can learn and grow from
             </p>
           </div>
           

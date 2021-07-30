@@ -16,6 +16,7 @@ import resume from './assets/Ajayi-Adekunle-Michael-Resume.pdf'
 import WOW from "wowjs"
 import "wowjs/css/libs/animate.css";
 import Typewriter from 'typewriter-effect';
+import hackafricaPicture from './assets/hackafrica.jpg'
 
 function App() {
 
@@ -36,7 +37,7 @@ function App() {
         name: "BSC GAMES DIVIDEND",
         image: bscg,
         stacks: ["React.js", "Web3.js", "Tailwind.css", "Netlify"],
-        description: "This is a Dapp. It is currently a work in progress. It is a blockchain based dividend app. where user freeze a token and earn BNB as a reward. check it out to see lots of other features",
+        description: "This is a DApp About to launch. It is a blockchain based dividend app. where user can freeze the native token of the platform and claim earned daily dividend in BNB. Frozen tokens can also be unfroze whenever the user want to. check it out to see lots of other features",
         live_link: "https://dividend.bscgames.win",
         repo_link: "/"
       },
@@ -44,7 +45,7 @@ function App() {
         name: "NerdyCruise",
         image: nerdycruise,
         stacks: ["React.js", "Node.js", "Express.js", "postgresql", "Heroku"],
-        description: "This is also a work in progress. It is web web Application intended for Nigerian secondary school students, most especially those preparing for their SSCE and UTME. On this platform, they will be able to take test and get result immediately the test is completed. In addition, they will also be able to manage their profiles and participate in a forum discussion that is strictly meant for academic talks only",
+        description: "This is a work in progress. It is a web Application intended for Nigerian secondary school students, most especially those preparing for their SSCE and UTME. On this platform, they will be able to take test and get result immediately the test is completed. In addition, they will also be able to manage their profiles and participate in a forum discussion that is strictly meant for academic talks only",
         live_link: "https://nerdycruise.herokuapp.com/",
         repo_link: "https://github.com/AjayiMike/Nerdycruise"
       },
@@ -52,7 +53,7 @@ function App() {
         name: "Weather App",
         image: weatherApp,
         stacks: ["HTML5", "CSS3", "Javascript", "Open weather map API", "Firebase"],
-        description: "A progressive web application that tells the weather condition of any city in the world with the help of OPEN WEATHER MAP API",
+        description: "A progressive web application that tells the weather condition of any city in the world with the help of OPEN WEATHER MAP API. This app is built from scratch without any library or framework",
         live_link: "https://weather-pwa-aap.web.app/",
         repo_link: "https://github.com/AjayiMike/mercy-s-weather-app"
       }
@@ -256,10 +257,10 @@ function App() {
               />
             </div> 
             <div className = "call-to-action wow fadeInUp">
-              <p>I am a very skillful DApp &amp; web developer, with knowledge and proficiency in building fast, scalable and responsive decentralized web applications as well as the ability of writing clean and maintainable code</p>
+              <p>I am a very skillful DApp &amp; web developer, with knowledge and proficiency in building fast, scalable, responsive and user-friendly decentralized web applications as well as the ability of writing clean and maintainable code.</p>
               <div className = "btn-groups">
                 <a href = "mailto:ajayimikeofficial@gmail.com" className = "call-to-action-btn">Hire me</a>
-                <a href = {resume} className = "resume" download> Download CV <RiFileDownloadLine className = "icon"/></a>
+                <a href = {resume} className = "resume" download>Download CV <RiFileDownloadLine className = "icon"/></a>
               </div>   
             </div>
           </div>
@@ -271,10 +272,10 @@ function App() {
           {screenSize < 992 ? 
           
           <div className = "call-to-action wow fadeInUp">
-              <p>I am a very skillful DApp &amp; web developer, with knowledge and proficiency in building fast, scalable and responsive decentralized web applications as well as the ability of writing clean and maintainable code</p>
+              <p>I am a very skillful DApp &amp; web developer, with knowledge and proficiency in building fast, scalable, responsive and user-friendly decentralized web applications as well as the ability of writing clean and maintainable code.</p>
               <div className = "btn-groups">
                 <a href = "mailto:ajayimikeofficial@gmail.com" className = "call-to-action-btn">Hire me</a>
-                <a href = {resume} className = "resume" download> Download CV <RiFileDownloadLine/></a>
+                <a href = {resume} className = "resume" download>Download CV <RiFileDownloadLine/></a>
               </div> 
           </div> : null
           }
@@ -285,10 +286,10 @@ function App() {
             <a href = "#about-me-section" id="about-me-section" className = "section-anchor">about me section</a>
             <h2 className = "section-title">About Me</h2>
             <p className = "section-text">
-              Hello! thanks for coming around. Adekunle Michael Ajayi is my name. I am a DApp &amp; Web developer and currently studying Computer science at The Federal University of Technlogy Minna, Nigeria.
+              Hello! thanks for coming around. Adekunle Michael Ajayi is my name. I am a DApp &amp; Web developer and currently studying Computer science at The Federal University of Technology Minna, Nigeria.
             </p>
             <p className = "section-text">
-              I recently picked interest in Web3 technology and I am elated to get an opportuninty to bridge my education with real world practical experience that I can learn and grow from
+              I use to be a web2 developer, but eventually, I transition into web3 technology and I have worked on various amazing Decentralized Applications. I am elated to gain more experience and exposure in the blockchain space.
             </p>
           </div>
           
@@ -300,7 +301,7 @@ function App() {
         <div className = "sections projects-section wow fadeInUp" data-wow-delay="1s">
           <a href = "#projects-section" id="projects-section" className = "section-anchor">projects section</a>
           <h2 className = "section-title">Projects</h2>
-          <p>These are some of the project I have worked on over the years in my developer journey</p>
+          <p>These are few of the project I have worked on over the years in my developer journey</p>
 
           <div className = "projects-gallery">
            { projectsData.map((projectData, index) => {
@@ -312,6 +313,14 @@ function App() {
         <div className = "sections activities-section wow fadeInUp" data-wow-delay="1s">
           <a href = "#activities-section" id = "activities-section" className = "section-anchor">activities section</a>
           <h2 className = "section-title">Activities</h2>
+            {/* to be moved in to a seperate component */}
+            <div className = "activity wow fadeInUp" data-wow-delay="1s">
+              <h2 className = "activity-title">HACK AFRICA BLOCKCHAIN CHALLENGE</h2>
+              <div className = "activity-body">
+                <img src = {hackafricaPicture} alt = "hack africa challenge" className = "activity-pic" />
+                <p className = "activity-text">currently participating in the HACK AFRICA challenge. Together with my team, we are working on a blockchain based solution project that solves a real world problem</p>
+              </div>
+            </div>
         </div>
 
         <div className = "sections contact-section wow fadeInUp" data-wow-delay="1s">
@@ -337,7 +346,7 @@ function App() {
               <a href = "https://www.linkedin.com/in/adekunle-michael-ajayi" target="_blank" rel="noreferrer"><AiFillLinkedin className = "icon" /></a>
             </li>
             <li className = "contact-link-item">
-              <a href = "tel:07089691306"><IoIosCall className = "icon" /></a>
+              <a href = "tel:07036244114"><IoIosCall className = "icon" /></a>
             </li>
           </ul>
           
